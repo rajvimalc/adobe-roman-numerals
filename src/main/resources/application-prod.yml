@@ -1,0 +1,10 @@
+
+logging:
+  level:
+    root: ERROR
+    com.adobe.assessment.romannumerals: INFO
+
+numeral-to-roman:
+  range:
+    min: 1
+    max: 3999
