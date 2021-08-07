@@ -29,6 +29,9 @@ dependencyManagement {
 	imports {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
+	dependencies {
+		dependency 'net.logstash.logback:logstash-logback-encoder:6.6'
+	}
 }
 
 dependencies {
@@ -39,6 +42,7 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
 
 	runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
+	runtimeOnly 'net.logstash.logback:logstash-logback-encoder'
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'

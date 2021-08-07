@@ -17,6 +17,12 @@ logging:
     root: INFO
     com.adobe.assessment.romannumerals: DEBUG
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
 numeral-to-roman:
   range:
     min: 1

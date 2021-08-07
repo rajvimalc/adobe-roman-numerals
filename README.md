@@ -28,7 +28,16 @@
 **Testing:**
 `Spring Boot` testing with `JUnit`
 
-**For Executable Jar:**
+**Containerization:**
+`Docker` with `Docker Compose`
+
+**Log aggregation:**
+`Elasticsearch`, `Logstash`, `Kibana` and `Beats`
+
+**Metrics and Monitoring:**
+`Prometheus` and `Grafana`
+
+### For Executable Jar:
 
 _Gradle Wrapper build command (Windows):_ 
     
@@ -40,3 +49,31 @@ Creates `adobe-roman-numerals-{version}.jar` file at `\build\libs` which can be 
 _Run the executable jar as (Windows):_
     
     java -jar -Dspring.profiles.active=prod .\build\libs\adobe-roman-numerals-1.0.0.jar
+
+
+### For Docker:
+
+    .\gradlew clean build
+
+    docker build -t adobe-roman-numerals .
+
+    docker-compose up
+
+    docker-compose down
+
+_To access Kibana Dashboard:_
+    
+    http://localhost:5601
+    
+    Discover => Create Index pattern => Step 1: logstash-* => Step 2: @timestamp => Discover
+
+
+### APIs:
+
+Numeral to Roman (Integer range: 1 - 3999): `http://localhost:8080/romannumeral?query={integer}`
+
+Health Check: `http://localhost:8080/`
+
+Host Info: `http://localhost:8080/romannumeral/api/v1/host-info`
+
+Actuator: `http://localhost:8080/romannumeral/actuator`
