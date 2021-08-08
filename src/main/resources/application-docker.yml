@@ -2,9 +2,6 @@
 spring:
   main:
     banner-mode: OFF
-  output:
-    ansi:
-      enabled: NEVER
 
 logging:
   level:

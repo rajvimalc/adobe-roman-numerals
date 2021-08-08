@@ -36,5 +36,5 @@ out/
 ### VS Code ###
 .vscode/
 
-elasticsearch
+elasticsearch/data
 filebeat/data

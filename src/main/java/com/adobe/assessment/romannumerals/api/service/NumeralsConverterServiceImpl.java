@@ -33,7 +33,15 @@ public class NumeralsConverterServiceImpl implements NumeralsConverterService {
     @Override
     public NumeralsConversion convertNumeralToRoman(final Integer numeral) {
 
+        // Input Validation
         validateRange(numeral);
+
+        // Store Letters used in Roman numerals and the corresponding numerical values in an array.
+        // Initialize a string builder, start checking if input number is >= highest roman numeral
+        // then add it to the string builder and reduce its corresponding value from the input number.
+        // If input number is < highest roman numeral then check with next highest roman numeral
+        // and repeat the process above till input number becomes 0.
+        // String builder will be the roman representation of input number.
 
         int number = numeral;
         final StringBuilder roman = new StringBuilder();

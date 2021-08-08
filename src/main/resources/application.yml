@@ -8,9 +8,6 @@ spring:
   application:
     name: adobe-roman-numerals
     version: 1.0.0
-  output:
-    ansi:
-      enabled: ALWAYS
 
 logging:
   level:
